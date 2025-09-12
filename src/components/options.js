@@ -1,13 +1,15 @@
 import React from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { useNavigation } from "@react-navigation/native";
 
 export default function Options ({deleteLast})
 {
+    const navigation = useNavigation()
     return (
         <View style = {styles.container}>
         <View style = {styles.row}>
-            <TouchableOpacity>
+           <TouchableOpacity onPress={() => navigation.navigate("CurrencyScreen")}>
                 <Text style = {styles.button}> CURRENCY </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={deleteLast}> 
